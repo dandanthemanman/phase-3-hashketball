@@ -1,4 +1,5 @@
-# Write your code below game_hash
+require 'pry' 
+
 def game_hash
   {
     home: {
@@ -126,4 +127,70 @@ def game_hash
   }
 end
 
-# Write code here
+def all_players
+  home_players = game_hash[:home][:players]
+  away_players = game_hash[:away][:players]
+  [home_players, away_players].flatten
+end
+
+def num_points_scored (player_name)
+  found_player = all_players.find do |hash|
+    hash[:player_name] == player_name  
+  end
+  return found_player[:points]
+end
+
+p num_points_scored("Jeff Adrien")
+# binding.pry
+
+
+
+
+
+
+
+# home = game_hash[:home][:players]
+# away= game_hash[:away][:players]
+# $all = home + away
+
+# $home_team = game_hash[:home]
+# $away_team = game_hash[:away]
+# $all_teams = [$home_team, $away_team]
+
+
+# knows the number of points scored by each player
+def num_points_scored input_player_name
+  $all.find { |player| player[:player_name] == input_player_name}[:points]
+end
+
+# that takes in an argument of a player's name and returns the shoe size for that player.
+def shoe_size input_player_name
+  $all.find { |player| player[:player_name] == input_player_name}[:shoe]
+end
+
+# that takes in an argument of the team name and returns an Array of that team's colors.
+def team_colors input_team_name
+  
+end
+
+# that operates on the game Hash to return an Array of the team names.
+def team_names
+  
+end
+
+# that takes in an argument of a team name and returns an Array of the jersey numbers for that team.
+def player_numbers 
+end
+
+# that takes in an argument of a player's name and returns a hash of that player's stats.
+def player_stats 
+end
+
+# that will return the number of rebounds associated with the player that has the largest shoe size. Break this one down into steps:
+
+# First, find the player with the largest shoe size
+# Then, return that player's number of rebounds
+# Remember to think about return values here.
+def big_shoe_rebounds 
+end
+
